@@ -12,9 +12,15 @@
 
 Esse projeto foi desenvolvido com as seguintes tecnologias:
 
--   [ReactJS](https://pt-br.reactjs.org/)
--   [Typescript](https://www.typescriptlang.org/)
--   [Firebase](https://firebase.google.com/)
+- [ReactJS](https://pt-br.reactjs.org/)
+- [Typescript](https://www.typescriptlang.org/)
+- [Firebase](https://firebase.google.com/)
+
+## :shipit: Diferenciais
+
+- PWA
+- [ESLint](https://eslint.org/)
+- [Prettier](https://prettier.io/)
 
 ## 💻 Projeto
 
@@ -22,10 +28,10 @@ Aplicativo de perguntas e respostas para amigos.
 
 ## 🚀 Como executar
 
--   Clone o repositório
--   Instale as dependências com `yarn install`
--   Inicie seu app com `yarn start`
--   Crie o arquivo `.env` usndo as variáveis do Firebase conforme o arquivo `.env.sample`
+- Clone o repositório
+- Instale as dependências com `yarn install`
+- Inicie seu app com `yarn start`
+- Crie o arquivo `.env` usndo as variáveis do Firebase conforme o arquivo `.env.sample`
 
 ## 📄 Licença
 
