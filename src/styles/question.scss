@@ -42,6 +42,10 @@
 			background: transparent;
 			cursor: pointer;
 
+			path {
+				transition: stroke 0.2s ease;
+			}
+
 			&.like-button {
 				display: flex;
 				align-items: flex-end;
@@ -55,6 +59,12 @@
 					svg path {
 						stroke: #835afd;
 					}
+				}
+			}
+
+			&.delete-button:hover {
+				svg path {
+					stroke: #e73f5d;
 				}
 			}
 

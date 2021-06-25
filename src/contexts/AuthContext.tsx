@@ -1,4 +1,5 @@
 import { ReactNode, createContext, useState, useEffect } from "react";
+import toast, { Toaster } from "react-hot-toast";
 
 import { firebase, auth } from "../services/firebase";
 
@@ -12,6 +13,7 @@ type AuthContextType = {
 	user: User | undefined;
 	signInWithGoogle: () => Promise<void>;
 	signInWithGithub: () => Promise<void>;
+	signOutUser: () => Promise<void>;
 };
 
 type AuthContextProviderProps = {
@@ -29,9 +31,10 @@ export function AuthContextProvider(props: AuthContextProviderProps) {
 				const { displayName, photoURL, uid } = user;
 
 				if (!displayName || !photoURL) {
-					throw new Error(
+					toast.error(
 						"Informações de usuário não preenchidas na conta Google."
 					);
+					return;
 				}
 
 				setUser({
@@ -56,9 +59,10 @@ export function AuthContextProvider(props: AuthContextProviderProps) {
 			const { displayName, photoURL, uid } = result.user;
 
 			if (!displayName || !photoURL) {
-				throw new Error(
+				toast.error(
 					"Informações de usuário não preenchidas na conta Google."
 				);
+				return;
 			}
 
 			setUser({
@@ -78,9 +82,10 @@ export function AuthContextProvider(props: AuthContextProviderProps) {
 			const { displayName, photoURL, uid } = result.user;
 
 			if (!displayName || !photoURL) {
-				throw new Error(
-					"Informações de usuário não preenchidas na conta Github."
+				toast.error(
+					"Informações de usuário não preenchidas na conta Google."
 				);
+				return;
 			}
 
 			setUser({
@@ -91,10 +96,16 @@ export function AuthContextProvider(props: AuthContextProviderProps) {
 		}
 	}
 
+	async function signOutUser() {
+		await auth.signOut();
+		setUser(undefined);
+	}
+
 	return (
 		<AuthContext.Provider
-			value={{ user, signInWithGoogle, signInWithGithub }}
+			value={{ user, signInWithGoogle, signInWithGithub, signOutUser }}
 		>
+			<Toaster position="top-center" reverseOrder={false} />
 			{props.children}
 		</AuthContext.Provider>
 	);
