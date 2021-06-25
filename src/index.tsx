@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { ModalProvider } from "react-modal-hook";
 import App from "./App";
+import { registerServiceWorker } from "./serviceWorker";
 
 import "./services/firebase";
 
@@ -15,3 +16,5 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById("root")
 );
+
+registerServiceWorker();

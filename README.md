@@ -18,7 +18,10 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 ## :shipit: Diferenciais
 
-- PWA
+- PWA Ready
+
+![pwa](https://user-images.githubusercontent.com/37770361/123488884-351a2680-d5e7-11eb-9400-3087c9dedd99.png)
+
 - [ESLint](https://eslint.org/)
 - [Prettier](https://prettier.io/)
 
