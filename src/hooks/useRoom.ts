@@ -1,4 +1,4 @@
-import { useState, FormEvent, useEffect } from "react";
+import { useState, useEffect } from "react";
 
 import { useAuth } from "../hooks/useAuth";
 import { database } from "../services/firebase";
@@ -34,6 +34,7 @@ export function useRoom(roomId: string) {
 	const { user } = useAuth();
 	const [questions, setQuestions] = useState<QuestionType[]>([]);
 	const [title, setTitle] = useState("");
+	const [author, setAuthor] = useState("");
 
 	useEffect(() => {
 		const roomRef = database.ref(`/rooms/${roomId}`);
@@ -60,6 +61,9 @@ export function useRoom(roomId: string) {
 
 			setTitle(databaseRoom.title);
 			setQuestions(parsedQuestions);
+			if (databaseRoom.authorId === user?.id) {
+				setAuthor(databaseRoom.authorId);
+			}
 		});
 
 		return () => {
@@ -67,5 +71,5 @@ export function useRoom(roomId: string) {
 		};
 	}, [roomId, user?.id]);
 
-	return { questions, title };
+	return { questions, title, author };
 }

@@ -1,0 +1,10 @@
+{
+  "name": "Letmeask by Allan Kehl",
+  "short_name": "Letmeask",
+  "theme_color": "#835afd",
+  "background_color": "#a8a8b3",
+  "display": "standalone",
+  "orientation": "portrait",
+  "scope": "/",
+  "start_url": "/"
+}

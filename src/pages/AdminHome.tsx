@@ -8,13 +8,13 @@ import { database } from "../services/firebase";
 
 import IlustrationImg from "../assets/images/illustration.svg";
 import LogoImg from "../assets/images/logo.svg";
-import GoogleColoredIcon from "../assets/images/google-icon-color.svg";
+import GoogleIcon from "../assets/images/google-icon.svg";
 import GithubIcon from "../assets/images/github-icon.png";
 import LogInImg from "../assets/images/log-in.svg";
 
 import "../styles/auth.scss";
 
-export function Home() {
+export function AdminHome() {
 	const history = useHistory();
 	const { user, signInWithGoogle, signInWithGithub } = useAuth();
 	const [roomCode, setRoomCode] = useState("");
@@ -82,12 +82,9 @@ export function Home() {
 						<React.Fragment>
 							<Button
 								onClick={() => handleCreateRoom("google")}
-								className="button white"
+								className="create-room"
 							>
-								<img
-									src={GoogleColoredIcon}
-									alt="Logo do Google"
-								/>
+								<img src={GoogleIcon} alt="Logo do Google" />
 								Crie sua sala com o Google
 							</Button>
 							<Button

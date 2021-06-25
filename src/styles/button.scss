@@ -19,6 +19,12 @@
 		margin-right: 8px;
 	}
 
+	&.white {
+		background: #fff;
+		border: 1px solid #a8a8b3;
+		color: #29292e;
+	}
+
 	&.outlined {
 		background: #fff;
 		border: 1px solid #835afd;
@@ -46,7 +52,6 @@
 }
 
 .create-room {
-	margin-top: 64px;
 	height: 50px;
 	border-radius: 8px;
 	font-weight: 500;
